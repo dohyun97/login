@@ -5,7 +5,7 @@
     :style="{ background, color}"
     :disabled="disable" >{{buttonName}}</button>
     
-
+ 
     
 
     </template>

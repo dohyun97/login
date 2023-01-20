@@ -97,7 +97,7 @@
         update({name, value,error}){
             this[name].value = value
             this[name].error = error
-            
+             
          },
          submit() {
         let user = this.users .find((u) => this.id.value === u.id && this.password.value === u.password)

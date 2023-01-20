@@ -6,7 +6,7 @@
     :disabled="disable" >{{buttonName}}</button>
     </router-link>  
    
-    
+     
     </template>
     
     <script>

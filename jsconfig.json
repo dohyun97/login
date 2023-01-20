@@ -9,7 +9,7 @@
         "src/*"
       ]
     },
-    "lib": [
+    "lib": [ 
       "esnext",
       "dom",
       "dom.iterable",

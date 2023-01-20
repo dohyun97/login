@@ -6,7 +6,7 @@ import SignOnPage from '../views/SignOnPage.vue';
 
 const routes = [
   
-  
+   
   {
     path: "/login",
     name: "SignOnPage",

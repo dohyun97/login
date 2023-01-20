@@ -41,5 +41,5 @@
     }
     button{
         cursor: pointer;
-    }
+    } 
     </style>
