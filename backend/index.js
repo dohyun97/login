@@ -2,29 +2,38 @@ const express = require('express')
 const app = express()
 const port = 3000
 const bodyParser = require('body-parser')
-const user = [
-    {
-        name:"user1", 
-        id:"abcdef",
-        password:"123456789"
-    },
-    {
-        name:"user2",
-        id:"abcdefg",
-        password:"111111111"  
-    }
-]    
+const db = require("./db")
+
+const user = []
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.get('/api/user', (req, res) => {
-  res.send(user)
+app.get('/api/user',  (req, res) => {
+   db.query("SELECT * FROM users;",(err,result) =>{
+    console.log(result);
+  res.send(result)
+  });
 })
 
-app.post('/api/user',(req,res) =>{
-    
-    user.push(req.body)
-    res.send(user)
+app.post('/api/user', (req,res) =>{
+   const user = {
+    "name": req.body.name,
+    "id": req.body.id,
+    "password": req.body.password
+   }
+     db.query('INSERT INTO users (name,id,password) VALUES ("'+user.name +'","'+user.id+'","'+user.password+'");' , (err)=>{
+        if (err) throw err;
+      // db.query("SELECT * FROM users",(err,result) =>{
+      //   console.log(result);
+      //   res.send(result)
+      //   });
+     });
+     db.query("SELECT * FROM users",(err,result) =>{
+      console.log(result);
+    res.send(result)
+    });
+     
 })
 
 app.listen(port, () => {
