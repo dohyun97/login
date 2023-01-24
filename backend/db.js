@@ -7,6 +7,6 @@ const db = mysql.createConnection({
     database:"sys"
 });
 
-db.connec();
+db.connect();
 
 module.exports = db;
