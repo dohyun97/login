@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.get('/api/user',  (req, res) => {
    db.query("SELECT * FROM users;",(err,result) =>{
     console.log(result);
-  res.send(result)
+  res.send(result);
   });
 })
 
