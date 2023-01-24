@@ -15,8 +15,8 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### With MySql in AWS
+In backend_mysql branch, you can check the code connet with MySql in AWS.
 
 ### How looks like
 This is the login/sign in page I made using Vue, Node.js, Axios, CSS 
